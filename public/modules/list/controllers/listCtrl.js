@@ -5,11 +5,8 @@ angular.module('listCtrl', ['listService'])
 
 	// Grab all the items from List Service
 	List.all()
-    .success(function(data) {
+    .then(function(data) {
         self.listItems = data;
-    })
-    .error(function(data) {
-        // Error Handling
-    });
+    }, function(error) {});
 
 });
